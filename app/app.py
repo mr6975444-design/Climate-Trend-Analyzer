@@ -16,6 +16,8 @@ from src.analysis.climate_analysis import (
     detect_temperature_anomalies,
 )
 
+from src.forecasting.temperature_forecast import forecast_temperature
+
 st.set_page_config(
     page_title="Climate Trend Analyzer",
     page_icon="🌍",
@@ -194,3 +196,46 @@ st.download_button(
 st.caption(
     "Climate Trend Analyzer | Educational data science project"
 )
+
+
+st.divider()
+st.subheader("🔮 12-Month Temperature Forecast")
+
+st.info(
+    "This forecast is generated from synthetic data for demonstration. "
+    "It is not a real-world climate prediction."
+)
+
+try:
+    forecast = forecast_temperature(data, periods=12)
+
+    fig_forecast = px.line(
+        forecast,
+        x="date",
+        y="forecast_temperature_c",
+        markers=True,
+        title="Forecasted Monthly Temperature",
+        labels={
+            "date": "Month",
+            "forecast_temperature_c": "Forecast temperature (°C)",
+        },
+    )
+
+    st.plotly_chart(fig_forecast, use_container_width=True)
+
+    with st.expander("View forecast values"):
+        st.dataframe(
+            forecast,
+            use_container_width=True,
+            hide_index=True,
+        )
+
+    st.download_button(
+        label="Download temperature forecast (CSV)",
+        data=forecast.to_csv(index=False).encode("utf-8"),
+        file_name="temperature_forecast.csv",
+        mime="text/csv",
+    )
+
+except (ValueError, FileNotFoundError) as error:
+    st.error(f"Could not generate the temperature forecast: {error}")
