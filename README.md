@@ -5,6 +5,12 @@ A Python data science project for exploring climate trends, identifying unusual 
 
 > **Important:** This project currently uses synthetic (simulated) climate data for educational and demonstration purposes. The results do not represent real-world climate observations.
 
+
+## 🚀 Live Demo
+
+Try the interactive dashboard: [Climate Trend Analyzer](https://climate-trend-analyzer-zsfs6wbk37i4yqvm2iaq88.streamlit.app/)
+
+
 ## ✨ Features
 
 - Generate monthly synthetic climate data.
