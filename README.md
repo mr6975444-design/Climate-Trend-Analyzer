@@ -58,7 +58,7 @@ Climate-Trend-Analyzer/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/mr6975444-design/Climate-Trend-Analyzer.git
 cd Climate-Trend-Analyzer
 ```
 
