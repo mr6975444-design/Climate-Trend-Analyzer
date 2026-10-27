@@ -111,6 +111,12 @@ The current synthetic dataset contains:
 
 The dataset is simulated and should not be used to draw conclusions about actual climate conditions.
 
+
+## 🖥️ Dashboard Preview
+
+![Climate Trend Analyzer dashboard](docs/images/climate-dashboard.png)
+
+
 ## 📈 Analysis
 
 The project calculates yearly averages, estimates a seasonally adjusted linear temperature trend, identifies unusual temperature observations, and calculates correlations between climate variables.
